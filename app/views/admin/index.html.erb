@@ -1,0 +1,27 @@
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete,:style=>"float:right" %>
+
+<table border ="2" >
+<tr><th>Name</th><th>Salary</th><th>Occupation</th><th>Email</th><th>Status</th><th>Show link</th><th>Salary slip</th></tr>
+
+
+<% @employee.each do |emp| %>
+
+<tr><td><%=capitalize emp.name %></td>
+<td><%= emp.salary %></td>
+<td><%= emp.occupation %></td>
+<td><%= emp.email %></td>
+<td>
+
+<% if emp.status == "active" %>
+   <%= link_to "inactive", admin_employee_status_path(:id=>emp.id) %>
+<% else %>
+   <%= link_to "active",admin_employee_status_path(:id=>emp.id) %>
+<% end %>
+</td>
+<td><%= link_to "show" ,admin_show_path(:id=>emp.id)%></td>
+
+<td><%= link_to "Download" ,admin_download_path(:id=>emp.id)%></td>
+</tr>
+		
+<% end if @employee%></table>	
+

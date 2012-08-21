@@ -1,0 +1,25 @@
+<div id="main">
+<%= link_to "Sign out", destroy_user_session_path, :method => :delete,:style=>"float:right" %>
+
+<table border ="2" >
+<tr><th>Name</th><th>Salary</th><th>Occupation</th><th>Email</th><th>Status</th><th>Add Department</th></tr>
+
+
+<tr><td><%= @emp.name %></td>
+<td><%= @emp.salary %></td>
+<td><%= @emp.occupation %></td>
+<td><%= @emp.email %></td>
+<td><%= @emp.status %></td>
+<td><%= link_to "Add Dept" ,{:controller=>"admin",:action=>"adddept",:id=>@emp.id},:remote=>true %></td>
+</tr>
+</div>
+<%#= link_to "Vote Yes", {:controller=>"widgets", :action => 'vote',:id=>widget, :vote=>true}, :remote=> true, :class=>"yes-button" %>
+
+
+ <div id="department" style="float:right; padding:220px 900px 0px 0px;">
+
+ </div>
+
+
+
+</table>	

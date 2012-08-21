@@ -1,0 +1,8 @@
+<%= form_tag('/admin/update_dept' ,:remote => true) %>
+<%#= form_tag({:controller => "admin", :action => "update_dept"},:remote => true)%>
+<%= select_tag "dept", options_from_collection_for_select(@department, "id", "name")%>
+
+<%= submit_tag "Submit" %>
+
+
+
