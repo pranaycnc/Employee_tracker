@@ -135,7 +135,7 @@ DEPENDENCIES
   devise
   execjs
   jquery-rails
-  pg
+  mysql2
   paperclip!
   rails (= 3.2.8)
   sass-rails (~> 3.2.3)
